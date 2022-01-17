@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "swayambhutestinterview": {
+      "hosting": {
+        "LandingPage": [
+          "swayambhutestinterview"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "swayambhutestinterview"
+  }
+}

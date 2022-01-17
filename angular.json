@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "LandingPage:build:production",
+            "firebaseProject": "swayambhutestinterview",
+            "firebaseHostingSite": "swayambhutestinterview"
+          }
         }
       }
     }
