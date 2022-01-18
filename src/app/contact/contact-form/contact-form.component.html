@@ -1,0 +1,66 @@
+<div class="container">
+    <form [formGroup]="contactForm" (submit)="onSubmit()">
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter Name.." />
+            <div *ngIf="(!contactForm.controls.name.status.valid && (contactForm.controls.name.touched || contactForm.submitted))"
+                [hidden]="contactForm.controls.name.valid">
+                <small class="text-danger">
+                    <p *ngIf="contactForm.controls.name.errors?.required">Name is Required</p>
+                    <p *ngIf="!contactForm.controls.name.errors?.required && 
+                    contactForm.controls.name.errors?.minlength.requiredLength">
+                        Minmum length of name should be 3 alphabets</p>
+                </small>
+            </div>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input class="form-control" formControlName="email" type="email" placeholder="Enter email" />
+            <div *ngIf="(!contactForm.controls.email.status.valid && (contactForm.controls.email.touched || contactForm.submitted))"
+                [hidden]="contactForm.controls.email.valid">
+                <small class="text-danger">
+                    <p *ngIf="contactForm.controls.email.errors?.required">Email is Required</p>
+                    <p *ngIf="!contactForm.controls.email.errors?.required && !contactForm.controls.email.errors?.valid">
+                        Email is invalid</p>
+                </small>
+            </div>
+        </div>
+
+        <div>
+            <label for="age">Age</label>
+            <input type="number" class="form-control" formControlName="age" placeholder="Age">
+            <div *ngIf="(!contactForm.controls.age.status.valid && (contactForm.controls.age.touched || contactForm.submitted))"
+                [hidden]="contactForm.controls.age.valid">
+                <span class="text-danger" *ngIf="contactForm.controls.age.errors?.required">
+                    Age is required
+                </span>
+                <span class="text-danger" *ngIf="!contactForm.controls.age.errors?.required && !contactForm.controls.age.errors?.valid">
+                    Age is invalid
+                </span>
+            </div>
+        </div>
+
+        <div>
+            <label for="phoneNumber">Phone Number</label>
+            <input type="number" class="form-control" formControlName="phoneNumber" placeholder="Phone number..">
+            <div *ngIf="(!contactForm.controls.phoneNumber.status.valid && (contactForm.controls.phoneNumber.touched || contactForm.submitted))"
+                [hidden]="contactForm.controls.phoneNumber.valid">
+                <span class="text-danger">
+                    <p *ngIf="contactForm.controls.phoneNumber.errors?.required">Mobile Number is required</p>
+                    <p *ngIf="!contactForm.controls.phoneNumber.errors?.required && !contactForm.controls.phoneNumber.errors?.valid">
+                        Mobile Number is invalid</p>
+                </span>
+            </div>
+        </div>
+
+        <div>
+            <label for="message">Message</label>
+            <textarea class="form-control" placeholder="Enter any message.." formControlName="messsage"></textarea>
+        </div>
+
+        <button style="margin-top:5px" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div *ngIf="isSubmitted" class="text-success">Form Submitted Succesfully</div>
+</div>
