@@ -1,21 +1,22 @@
+import "@angular/compiler";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactRoutingModule } from './contact-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ContactService } from './services/contact.service';
 
-
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
-    ContactFormComponent
+    ContactFormComponent,
   ],
   imports: [
     CommonModule,
-    ContactRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    ContactRoutingModule, 
   ],
   providers: [ContactService]
 })

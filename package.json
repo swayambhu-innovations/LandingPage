@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "aot": "ng serve --aot",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -21,6 +22,7 @@
     "@angular/router": "~13.0.0",
     "bootstrap": "^5.1.3",
     "firebase": "^9.4.0",
+    "firestore": "^1.1.6",
     "rxfire": "^6.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
